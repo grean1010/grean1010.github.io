@@ -1,0 +1,23 @@
+@media (max-width: 767px) {
+
+  .navbar  {
+    background-color: #c0d0e2;
+    color: #232b33;
+  }
+  .navbar-dark  {
+    background-color: #c0d0e2;
+    color: #232b33;
+  }
+  .bg-darkvbar  {
+    background-color: #c0d0e2;
+    color: #232b33;
+  }
+  .navbar-expand-sm {
+    background-color: #c0d0e2;
+    color: #232b33;
+  }
+  .navbar-brand {
+    background-color: #c0d0e2;
+    color: #232b33;
+  }
+}
