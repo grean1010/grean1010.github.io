@@ -1,107 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Latitude and Weather</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Maria Hudson ~ Data Analytics Web Assignments</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 24px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #2dc092; /* Lgt green */
+    color: #ffffff;
+  }
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-  <link rel="stylesheet" href="style.css">
+  .bg-4 { 
+    background-color: #0e382b; /* Dk green */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+    color: #2dc092 !important;
+  }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
 
-    <a class="navbar-brand" href="index.html">Latitude</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
     
-    <div class="collapse navbar-collapse navbar-dark bg-dark" id="navbarSupportedContent">
-      
-      <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Plots
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="MaxTemp.html">Max Temperature</a>
-                      <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a>
-                      <a class="dropdown-item" href="Humidity.html">Humidity</a>
-                      <a class="dropdown-item" href="WindSpeed.html">Wind Speed</a>
-                  </li>          
-        <li class="nav-item">
-          <a class="nav-link" href="Comparison.html">Comparison</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Data.html">Data</a>
-        </li>
-
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-left">
+        <li>Homework Web Projects:</li>
+        <li><a href="./HTMLCSS/index.html">Module 11: HTML & CSS</a></li>
+        <li><a href="https://icky-belly-button-homework.herokuapp.com/">Module 15:  Plotly Interactive</a></li>
+        <li><a href="./D3/index.html">Module 16: D3.js</a></li>
+        <li><a href="#">Module 17: GeoMapping</a></li>
+        <li><a href="#">Module 18: Tableau</a></li>
       </ul>
     </div>
-  </nav>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-md-8">
-        <h3>Summary:  Latitude vs. Weather
-        <hr>
-        </h3>
-        <img src="./Images/Lat_Temp_lg.png" alt="..." class="rounded float-left img-responsive">
-        <p>The purpose of this project was to analyze how weather changes as you get closer to the equator. To accomplish this, we first pulled 
-          data from the OpenWeatherMAP API to assemble a dataset of over 500 cities.</p>
-        <p>To find cities, we took a random sample of 1500 latitude and longitude coordinates around the globe.  We then used the citypy package 
-          to identify the city nearest to each of the randomly generated coordinates.  After removing duplicate cities, we tested to see that we 
-          had at least 500 cities in our dataframe. Having successfully generated a sample of cities worldwide, we used OpenWeaterMap API to pull 
-          current weather information for each of those cities. </p>
-        <p> Because not all cities had weather information available, we tested the sample size again to ensure we had data for at least 500 cities. 
-          We further tested to see if those cities were relatively well-spread geographically.  The following two box plots show the distribution 
-          of latitude and longitude in the final sample.</p>
-        <div class="row">
-            <div class="col-12">
-              <h4>Distribution of Latitude and Longitude</h4>
-              <div class="row">
-                  <div class="col-sm-3 col-md-6">
-                      <img src="./Images/BoxPlot_Lat_lg.png" class="img-responsive">
-                  </div>
-                  <div class="col-sm-3 col-md-6">
-                      <img src="./Images/BoxPlot_Long_lg.png" class="img-responsive">
-                  </div>
-              </div>
-            </div>
-        </div>
-        <p>Note that longitude values centered around 0 and were evenly spread, the latitudes found in the finished dataframe are skewed to the north 
-          by 19.97 degrees. We saw the same effect each time we reran the sample. This is due to the fact that the northern hemisphere contains 68% 
-          of the world's land mass (according to <a href="https://www.worldatlas.com/articles/which-hemisphere-has-the-largest-area-covered-by-land.html">World Atlas</a>). 
-            To test this theory, we looked at the percentage of cities in the northern hemisphere and it was similar, at 68.47%. Therefore, we concluded that the skew represents the actual skew of location of landmass in the world and hence our sample was sufficient to continue analysis.</p>
-        <p>After assembling the dataset, we used Matplotlib to plot various aspects of the weather versus latitude. Factors we looked at included: temperature, cloudiness, wind speed, and humidity. This site provides the source data and visualizations created as part of the analysis as well as explanations and descriptions of any trends and correlations witnessed. You can see these visualizations and accompanying analysis by selecting comparisons across the top navigation bar or selecting any of the visualization thumbnails.</p>
-      </div>
-      <div class="col-6 col-md-4">
-          <h3><a href="Comparison.html">Visualizations</a></h3>
-          <hr>
-          <div class="row">
-              <div class="col-sm-3 col-md-6">
-                  <a href="Cloudiness.html"><img src="./Images/Lat_Cloud_med.png" class="img-thumbnail"></a>
-              </div>
-              <div class="col-sm-3 col-md-6">
-                  <a href="Humidity.html"><img src="./Images/Lat_Humid_med.png" class="img-thumbnail"></a>
-              </div>
-              <div class="col-sm-3 col-md-6">
-                  <a href="WindSpeed.html"><img src="./Images/Lat_Wind_med.png" class="img-thumbnail"></a>
-              </div>
-              <div class="col-sm-3 col-md-6">
-                  <a href="MaxTemp.html"><img src="./Images/Lat_Temp_med.png" class="img-thumbnail"></a>
-              </div>
-          </div>
-      </div>
-  
-    </div>
   </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <h1 class="margin">Data Analytics Web Projects</h1>
+  
+  <h2>Maria Hudson</h2>
+</div>
+
+
+<!-- Footer -->
+<footer class="container-fluid bg-4 text-center">
+  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+  <p>Idea for submitting homework <i>shamelessly</i> stolen from Carol Wittig</p>
+</footer>
 
 </body>
-
 </html>
