@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Health Risks, Age and Income</title>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/d3Style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1>Poverty Kills</h1>
+        <h2>... news that should surprise no one, but somehow still does.</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div id="scatter">
+          <!-- We append our chart here. -->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-9">
+        <div class="article">
+          <h2>Correlations Discovered Between Health Risks and Age, Income</h2>
+          <p>Explore the graphic above to see the relationship between health risks, age and income.  Select factors along 
+             axis to see the interplay between these variables.  At first glance, it seems that there are many important 
+             relationships here.  But are there?
+          </p>
+
+          <p>Nothing is that easy and there are no short answers.</p>
+
+          <p>Let's take the simplest of the x-axis variables-- Age.  Click through the y-axis values to explore the relationship 
+              between a state's median age and the percentage of the population with various health risks.  
+              <ul>
+                 <li><b>Percent Without Health Care.  </b>At first glance, there is not much correlation between median age 
+                   in a state and the percentage of the population without healthcare.  But look closer and see that there is a cluster of 
+                   higher rates of non-insurance in states with younger populations. This is likely the result of Medicare being available
+                   to those over 65.  It's possible that states with large numbers of retirees are masking high rates of non-coverage among 
+                   younger people. There are notable outliers, for example Massachusetts, which mandates health care coverage for nearly 
+                   all residents.</li>
+                 <li><b>Percent Who Smoke.  </b>Here we see that smoking is less prevalent in states with a lower median age. While not a 
+                   strong correlation, this is consistent with public health efforts over the past several decades to prevent youth smoking. </li>
+                 <li><b>Percent Who are Obese.  </b>There does not appear to be any correlation between a state's median age and the 
+                   percent of the population who are obese. </li>
+              </ul>   
+           </p>
+           <p>Now consider median income.  Select median income on the x-axis and click through the y-axis values to explore the relationship 
+              between a state's median income and the percentage of the population with various health risks.  
+              <ul>
+                 <li><b>Percent Without Health Care.  </b>Not surprisingly, there is a strong correlation between median income and the 
+                   percentage of the population without health care.  Health care is expensive and most Americans are insured through their 
+                   employer.  It makes sense that those with better employment would have more money and be more likely to have health insurance. </li>
+                 <li><b>Percent Who Smoke.  </b>There is a much stronger correlation between a state's median income and its smoking rate. Smoking 
+                   cessation can be an expensive, time-consuming venture. More money means more resources available for those who want to quit. 
+                   Over a large population, this makes a difference in the ability to sucessfully quit smoking.</li>
+                 <li><b>Percent Who are Obese.  </b>At first this relationship seems counter-intuitive.  People with less money are far more likely
+                   to be obese. One would think that having no money means having no food. However, the system of food supply in the United States is 
+                   one of extreme plenty for calories and extreme lack for nutrition. Healthy food is more expensive than cheap, calorie-dense junk 
+                   foods. Additionally, much like smoking cessation, weight loss programs are both costly and time-consuming. This puts it out of reach 
+                   of people without a certain income.  Both of those factors together contribute to soaring obesity rates among the 
+                   nation's poor. </li>
+              </ul>   
+           </p>
+           <p>Finally, consider poverty rates.  Select poverty on the x-axis and click through the y-axis values to explore the relationship 
+              between a state's poverty rate and the percentage of the population with various health risks.  The relationships and correlations 
+              are nearly identical to those related to income.  In fact, some of the relationships are more stark because poverty rates reflect 
+              a family's income relative to the local economic conditions and is a stronger indication of a family's inability to afford basic needs.  
+              <ul>
+                 <li><b>Percent Without Health Care.  </b>While we expect to see a similar relationship between poverty and health care access, it 
+                  is surprising to note that there are still very high percentages of the population without healthcare in some of the poorest states. 
+                  Theoretically Medicaid covers the poorest and sickest population in a state. Some states block access or simply do not have the 
+                  funds to enroll all of their poor. </li>
+                 <li><b>Percent Who Smoke.  </b>This relationship is nearly identical to the median income relationship to smoking rates. It's worth 
+                  noting that smoking can often be an outlet or emotional crutch for people living in desperate conditions. </li>
+                 <li><b>Percent Who are Obese.  </b>Again we see an even more stark relationship between poverty and obesity as we saw with income. </li>
+              </ul>   
+           </p>
+           <p>
+             The real story here is that poverty kills.  The health effects of living under the constant stress of poverty are well-documented.  Poor  
+             health further reduces a family's ability to earn money, perpetuating a cycle with no good outcomes. People with limited resources will 
+             stick to a vice such as smoking as one of their only releases. Those with the desire to quit lack the resources to get help.  Lack of 
+             affordable, nutritious food leads cash-strapped families to purchase larger quantities of high-caloric food in order to feed everyone. 
+             Decades of living this way takes a heavy toll on the body and spririt. Eventually, people live much sicker lives and die much sooner than 
+             they should. 
+           </p>
+           <p>
+             Now the question is what can we do to make things better? We need fact-driven research into interventions that reduce poverty. If we 
+             can ensure that children have quality food available to them, that anyone who wants to quit will have access to proven cessation therapy, 
+             and that people do not suffer unnecessarily or die from preventable, manageable conditions, then we would save the public an enormous 
+             amount of money and live better lives. Too many politically-charged strategies have failed to make a difference. It's time we look at 
+             this as a numbers problem rather than an emotional one.  Try something. Measure its impact. Support measures that work. Repeat and improve.
+           </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>Correlation is not causation, but it can be a call to action.</p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script type="text/javascript" src="assets/js/app.js"></script>
+
+</body>
+
+</html>
