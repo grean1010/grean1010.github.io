@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Earthquake Interactive Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+</head>
+<body>
+
+  <!-- Title Banner -->
+
+  <div class="jumbotron">
+      <div class="container">
+          <h1>Earthquake Interactive Map</h1>
+          <p>Below is a map of earthquakes reported by the <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS</a> 
+            in the past week. Each one is color coded and sized relative to its magnitude.  Click on each individual marker for more 
+            information about each quake.  Use the legend to toggle a visualization of the <a href="https://github.com/fraxen/tectonicplates">
+            tectonic plates</a>.  
+          </p>
+      </div>
+  </div>
+
+  <!-- The div that holds our map -->
+  <div id="map"></div>
+
+  <!-- API key -->
+  <script type="text/javascript" src="/static/js/config.js"></script>
+  <!-- Leaflet JavaScript -->
+  <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+  <!-- D3 JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/logic.js"></script>
+</body>
+</html>
